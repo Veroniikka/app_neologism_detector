@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Results</h1>
+
+        <h2>Neologisms (Pymorphy):</h2>
+        <ul>
+            {% for word in candidats_pymorphy %}
+            <li>{{ word }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Neologisms (Custom Dictionary):</h2>
+        <ul>
+            {% for word in candidats_dict %}
+            <li>{{ word }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Contexts:</h2>
+        <ul>
+            {% for word, context in contexts %}
+            <li><strong>{{ word }}:</strong> {{ context }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/" style="color: #007bff; text-decoration: none;">Back</a>
+    </div>
+</body>
+</html>

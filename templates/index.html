@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Neologism Detector</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Russian Neologism Detector</h1>
+        <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="App Logo" class="logo">
+
+        <p class="description">
+            This application is designed to analyze Russian texts and identify neologisms - new words that are not yet widely recognized. Enter a text in Russian or provide a URL, and we will find unique and emerging 
+            words for you.
+        </p>
+
+        
+        <form method="POST">
+            <label for="text">Enter text in Russian:</label><br>
+            <textarea name="text" rows="10" placeholder="Enter text..."></textarea><br>
+
+            <label for="url">Or specify a URL from Russuan media (only ria.ru works for now):</label><br>
+            <input type="url" name="url" placeholder="Enter a webpage link"><br>
+
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
