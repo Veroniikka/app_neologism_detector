@@ -13,3 +13,6 @@ Words are checked against the morphological database (pymorphy3).
 Words are filtered using custom dictionaries to exclude common or irrelevant terms.
 #### Context Analysis: 
 Sentences containing potential neologisms are extracted and displayed.
+
+URL of the site deployed on Render:
+https://russian-neologism-detector.onrender.com/
